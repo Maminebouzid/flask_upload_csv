@@ -6,4 +6,5 @@ Flask-CORS==3.0.10
 pytest==7.0.1
 pytest-qt==4.0.2
 flake8==4.0.1
-
+click==8.0.3
+itsdangerous==2.0.1
