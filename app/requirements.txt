@@ -8,3 +8,4 @@ pytest-qt==4.0.2
 flake8==4.0.1
 click==8.0.3
 itsdangerous==2.0.1
+pycountry==22.3.5
