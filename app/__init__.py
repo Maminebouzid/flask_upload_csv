@@ -26,14 +26,15 @@ def handlecsv():
         if request.method == 'POST':
             # check if the post request has the file part
             if 'file' not in request.files:
+                return render_template("index.html", error = 'No file part' )
                 
-                return make_response({'message': 'No file part'},405)
              
             file = request.files['file']
             # If the user does not select a file, the browser submits an
             # empty file without a filename.
             if file.filename == '':
-                return make_response({'message': 'No selected file'},405)
+                return render_template("index.html", error = 'No selected file' )
+                
             
             if file and allowed_file(file.filename):
                                 
@@ -49,8 +50,9 @@ def handlecsv():
 
                     
                 else:
-                    return make_response({'message': data},405)
+                    return render_template("index.html", error = f"error while reading the file : {data}" )
+                    
             else:
-                return make_response({'message': 'format not supported'},405)
+                return render_template("index.html", error = 'format not supported, please upload csv file' )
     except Exception as e:
         return make_response({'message': f'error {e}'},500)
