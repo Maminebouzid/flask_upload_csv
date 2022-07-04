@@ -5,10 +5,13 @@
 </head>
 <body>
     <p>CSV Converter</p>
-  <form>
+  <form enctype="multipart/form-data" method="post" action="/upload">
       
       <label for="file">Please insert the csv file  here</label>
-      <input type="file" id="file">
+      <input type="file" id="file" name="file">
+      <br>
+      <label for="submit"> Submit</label>
+      <input type="submit" id="submit">
   </form>
 </body>
 </html>
