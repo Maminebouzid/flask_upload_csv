@@ -41,8 +41,8 @@ def handlecsv():
                 if type(data) ==list:
                                
                     # stream the response as the data is generated
-                    
                     response = Response(generate_file(data), mimetype='text/csv')
+                    
                     # add a filename
                     response.headers.set("Content-Disposition", "attachment", filename=f"{file.filename}-transformed.csv")
                     return response
