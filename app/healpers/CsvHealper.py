@@ -121,7 +121,7 @@ def parse_user_file(file):
             
             data = generate_output_data(content)
             return data
-        return valid_header
+        return "wrong header"
 
 def generate_file(data):
     """
